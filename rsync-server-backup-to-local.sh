@@ -1,7 +1,7 @@
 #!/bin/bash
  
-USER="mtrinidad"
-DOMAIN="san.ronins.site"
+USER=""
+DOMAIN=""
 
 #must be absolute paths
 #SSH PRIVATE KEY
