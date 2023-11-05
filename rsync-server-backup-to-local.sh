@@ -1,6 +1,21 @@
 #!/bin/bash
  
-rsync -avziO -e "ssh -i /Users/fst.user/.ssh/id_ed25519" mtrinidad@san.ronins.site:~/migoy_backups/db_backup/ ~/Desktop/migoy_backups/db_backup
+USER="mtrinidad"
+DOMAIN="san.ronins.site"
+
+#must be absolute paths
+#SSH PRIVATE KEY
+SSH_KEY_PATH=""
+
+SOURCE_DIR_DB="/home/mtrinidad/migoy_backups/db_backup/"
+DEST_DIR_DB="/Users/fst.user/Desktop/migoy_backups/db_backup"
+
+SOURCE_DIR_APP="/home/mtrinidad/migoy_backups/app_backup/"
+DEST_DIR_APP="/Users/fst.user/Desktop/migoy_backups/app_backup"
+
+
+#sync db backup
+rsync -avziO -e "ssh -i $SSH_KEY_PATH" $USER@$DOMAIN:$SOURCE_DIR_DB $DEST_DIR_DB
 
 if [ $? -eq 0 ]; then
     echo "Weekly database backup rsync completed successfully."
@@ -8,7 +23,8 @@ else
     echo "Error: Weekly database backup rsync failed."
 fi
 
-rsync -avzO -e 'ssh -i /Users/fst.user/.ssh/id_ed25519' mtrinidad@san.ronins.site:~/migoy_backups/app_backup/ ~/Desktop/migoy_backups/app_backup
+#sync app backup
+rsync -avziO -e "ssh -i $SSH_KEY_PATH" $USER@$DOMAIN:$SOURCE_DIR_APP $DEST_DIR_APP
 
 if [ $? -eq 0 ]; then
     echo "Weekly application backup rsync completed successfully."
