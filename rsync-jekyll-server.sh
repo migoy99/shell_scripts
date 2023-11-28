@@ -5,6 +5,7 @@ DOMAIN="san.ronins.site"
 #SSH PRIVATE KEY
 SSH_KEY_PATH="/home/migoy99/.ssh/migoy_lnx_pc"
 
+#linux path
 SOURCE_DIR_JK="/home/migoy99/Desktop/miguel_blog/_site/"
 DEST_DIR_JK="/home/mtrinidad/mtrinidad.ronins.site/public/miguel_blog"
 
