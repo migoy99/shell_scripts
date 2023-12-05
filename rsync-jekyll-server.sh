@@ -1,17 +1,17 @@
-USER="mtrinidad"
-DOMAIN="san.ronins.site"
+USER=""
+DOMAIN=""
 
-#must be absolute paths
+#MUST BE ABSOLUTE PATHS
+
 #SSH PRIVATE KEY
-SSH_KEY_PATH="/home/migoy99/.ssh/migoy_lnx_pc"
+SSH_KEY_PATH=""
 
-#linux path
-SOURCE_DIR_JK="/home/migoy99/Desktop/miguel_blog/_site/"
-DEST_DIR_JK="/home/mtrinidad/mtrinidad.ronins.site/public/miguel_blog"
+#Source and destination directories
+#Source is with `/`, destination is without `/`
+SOURCE_DIR_JK="/miguel_blog/_site/"
+DEST_DIR_JK="/public/miguel_blog"
 
-#sync JEKYLL _site to server
-#rsync -avziO -e "ssh -i $SSH_KEY_PATH" $USER@$DOMAIN:$SOURCE_DIR_JK $DEST_DIR_JK
-
+#Sync JEKYLL _site to server
 rsync -avziO -e "ssh -i $SSH_KEY_PATH" $SOURCE_DIR_JK $USER@$DOMAIN:$DEST_DIR_JK
 
 if [ $? -eq 0 ]; then

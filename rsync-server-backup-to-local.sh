@@ -3,15 +3,18 @@
 USER=""
 DOMAIN=""
 
-#must be absolute paths
-#SSH PRIVATE KEY
+#MUST BE ABSOLUTE PATHS
+
+#SSH PRIVATE KEY PATH
 SSH_KEY_PATH=""
 
-SOURCE_DIR_DB="/home/mtrinidad/migoy_backups/db_backup/"
-DEST_DIR_DB="/Users/fst.user/Desktop/migoy_backups/db_backup"
+#Source and destination directories
+#Source is with `/`, destination is without `/`
+SOURCE_DIR_DB="/migoy_backups/db_backup/"
+DEST_DIR_DB="/migoy_backups/db_backup"
 
-SOURCE_DIR_APP="/home/mtrinidad/migoy_backups/app_backup/"
-DEST_DIR_APP="/Users/fst.user/Desktop/migoy_backups/app_backup"
+SOURCE_DIR_APP="/migoy_backups/app_backup/"
+DEST_DIR_APP="/migoy_backups/app_backup"
 
 
 #sync db backup

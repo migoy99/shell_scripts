@@ -1,8 +1,10 @@
 #!/bin/bash
 
-#must be absolute path
-APP_DIR="/home/mtrinidad/mtrinidad.ronins.site"
-BACKUP_DIR="/home/mtrinidad/migoy_backups/app_backup"
+#MUST BE ABSOLUTE PATHS
+
+#Source and destination directories
+APP_DIR="/mtrinidad.ronins.site"
+BACKUP_DIR="/migoy_backups/app_backup"
 
 DATE_FORMAT=$(date +\%Y-\%m-\%d-\%H\%M\%S)
 BACKUP_FILENAME="$BACKUP_DIR/app_backup-$DATE_FORMAT.tgz"
