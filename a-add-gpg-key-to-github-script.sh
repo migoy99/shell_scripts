@@ -72,7 +72,18 @@ read -p "Enter your private GitHub email associated with the GPG key: " GITHUB_E
 read -p "Enter your GitHub username: " GITHUB_USERNAME
 
 # Prompt for Git configuration type (local or global)
-read -p "Do you want to configure Git locally or globally? (local/global): " GIT_CONFIG_TYPE
+while true; do
+    read -p "Do you want to configure Git locally or globally? (local/global): " GIT_CONFIG_TYPE
+
+    # Check if the input is valid (either "local" or "global")
+    if [ "$GIT_CONFIG_TYPE" == "local" ]; then
+        break  # Exit the loop if the input is valid
+    elif [ "$GIT_CONFIG_TYPE" == "global" ]; then
+        break  # Exit the loop if the input is valid
+    else
+        echo "Invalid input. Please enter either 'local' or 'global'."
+    fi
+done
 
 # Configure Git settings based on user input
 if [ "$GIT_CONFIG_TYPE" == "local" ]; then
