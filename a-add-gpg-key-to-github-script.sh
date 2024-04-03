@@ -56,7 +56,7 @@ gh auth login --with-token < token.txt
 gh auth refresh -s write:gpg_key
 
 # Add GPG key to GitHub account using gh cli
-if gh gpg-key add temp_exported_key.txt; then
+if gh gpg-key add temp_exported_key.txt --title $GPG_KEY_TITLE; then
     echo "GPG key added to GitHub account successfully."
 else
     echo "Failed to add GPG key. Exiting..."
@@ -118,4 +118,7 @@ echo "Git configuration completed successfully."
 echo "Check config by: git config --local --list"
 echo "Check config by: git config --global --list"
 echo ""
+
+# Clean up: Remove the token file
+rm token.txt
 
